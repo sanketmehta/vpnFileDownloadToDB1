@@ -11,10 +11,10 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 
 sched = BlockingScheduler()
 
-@sched.scheduled_job('interval', minutes=2)
+@sched.scheduled_job('interval', minutes=1)
 def timed_job():
 
-    print('This job is run every 2 minutes.')
+    print('This job is run every 1 minutes.')
 
 
     dir_path = os.path.dirname(os.path.realpath(__file__))
