@@ -23,10 +23,10 @@ def timed_job():
 
     # Set the MOZ_HEADLESS environment variable which casues Firefox to start in headless mode.
     os.environ['MOZ_HEADLESS'] = '1'
-    exeFirefox = os.environ['FIREFOX_EXE']
+#     exeFirefox = os.environ['FIREFOX_EXE']
 
     # Select your Firefox binary.
-    binary = FirefoxBinary(exeFirefox, log_file=sys.stdout)
+#     binary = FirefoxBinary(exeFirefox, log_file=sys.stdout)
 
     profile = webdriver.FirefoxProfile()
     profile.set_preference("browser.download.folderList", 2)
@@ -35,7 +35,8 @@ def timed_job():
     profile.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/xml,text/plain,text/xml,image/jpeg,text/csv")
 
     # Start selenium with the configured binary.
-    driver = webdriver.Firefox(firefox_binary=binary, firefox_profile=profile)
+#     driver = webdriver.Firefox(firefox_binary=binary, firefox_profile=profile)
+    driver = webdriver.Firefox(firefox_profile=profile)
 
     # Visit this webpage.
     driver.get("https://thatoneprivacysite.net/vpn-comparison-chart/")
