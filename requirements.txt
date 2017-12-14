@@ -1,0 +1,4 @@
+APScheduler==3.0.0
+selenium==3.6.0
+pandas==0.20.3
+SQLAlchemy==1.1.14
