@@ -43,7 +43,7 @@ os.chmod('/app/geckodriver.log', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 os.chmod('/app/geckodriver.log', os.stat('/app/geckodriver.log').st_mode | stat.S_IEXEC)
 print("changed geckodriver.log file permissions")
 
-open('geckodriver.log', 'r')
+open('geckodriver.log', 'r+')
 print("opened geckodriver.log file in read mode")
 close('geckodriver.log')
 print("closed geckodriver.log file")
