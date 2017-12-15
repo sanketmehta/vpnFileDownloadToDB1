@@ -44,8 +44,13 @@ def timed_job():
     profile.set_preference("browser.download.dir", dir_path)
     profile.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/xml,text/plain,text/xml,image/jpeg,text/csv")
 
+    print(sys.path)
+#     capabilities['marionette'] = False
+    
+    
     # Start selenium with the configured binary.
     driver = webdriver.Firefox(firefox_binary=binary, firefox_profile=profile)
+#     driver = webdriver.Firefox(firefox_binary=binary, desired_capabilities=capabilities, firefox_profile=profile)
 #     driver = webdriver.Firefox(firefox_profile=profile)
 
     # Visit this webpage.
