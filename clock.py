@@ -26,7 +26,7 @@ print("copied file from ", src_file, " to ", des_file)
 # os.chmod('/app/geckodriver/geckodriver.exe', st1.st_mode | stat.S_IEXEC)
 # os.chmod('/app/geckodriver/geckodriver.exe', 777)
 os.chmod('/app/geckodriver.exe', 777)
-os.chmod('/app/geckodriver.exe', st1.st_mode | stat.S_IEXEC)
+os.chmod('/app/geckodriver.exe', os.stat('/app/geckodriver.exe').st_mode | stat.S_IEXEC)
 
 # os.chmod('/app/geckodriver', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 # os.chmod('/app/geckodriver/geckodriver.exe', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
