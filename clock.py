@@ -64,7 +64,7 @@ def timed_job():
     
     
     # Start selenium with the configured binary.
-    driver = webdriver.Firefox(firefox_binary=binary, firefox_profile=profile)
+    driver = webdriver.Firefox(executable_path=des_dir, firefox_binary=binary, firefox_profile=profile)
 #     driver = webdriver.Firefox(firefox_binary=binary, desired_capabilities=capabilities, firefox_profile=profile)
 #     driver = webdriver.Firefox(firefox_profile=profile)
 
