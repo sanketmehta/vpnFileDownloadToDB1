@@ -43,8 +43,10 @@ os.chmod('/app/geckodriver.log', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 os.chmod('/app/geckodriver.log', os.stat('/app/geckodriver.log').st_mode | stat.S_IEXEC)
 print("changed geckodriver.log file permissions")
 
-open('/app/geckodriver.log', 'w')
+open('/app/geckodriver.log', 'r')
+print("opened geckodriver.log file in read mode")
 close('/app/geckodriver.log')
+print("closed geckodriver.log file")
 
 # print("original sys path:",sys.path)
 # # my_path = ['/usr/local/bin','/usr/bin','/bin','/app/vendor/firefox','/app/geckodriver']
