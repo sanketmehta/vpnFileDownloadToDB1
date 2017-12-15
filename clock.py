@@ -93,13 +93,13 @@ def timed_job():
     profile.set_preference("browser.download.dir", dir_path)
     profile.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/xml,text/plain,text/xml,image/jpeg,text/csv")
 
-#     capabilities['marionette'] = False
+    capabilities['marionette'] = False
     
     os.chmod('/app/geckodriver.log', 777)
     os.chmod('/app/geckodriver.log', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
     # Start selenium with the configured binary.
-    driver = webdriver.Firefox(executable_path='/app/geckodriver', firefox_binary=binary, firefox_profile=profile, log_path='/app/.heroku/python/geckodriver.log')
+    driver = webdriver.Firefox(executable_path='/app/geckodriver', desired_capabilities=capabilities, firefox_binary=binary, firefox_profile=profile, log_path='/app/.heroku/python/geckodriver.log')
 #     driver = webdriver.Firefox(executable_path='/app/geckodriver.exe', firefox_binary=binary, firefox_profile=profile, log_path='/app/.heroku/python/geckodriver.log')
 #     driver = webdriver.Firefox(executable_path='/app/geckodriver', firefox_binary=binary, firefox_profile=profile)
 #     driver = webdriver.Firefox(firefox_binary=binary, desired_capabilities=capabilities, firefox_profile=profile)
