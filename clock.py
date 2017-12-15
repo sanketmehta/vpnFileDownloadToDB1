@@ -20,7 +20,8 @@ print("current dir:", cwd)
 
 
 print("original path:",sys.path)
-os.environ['PATH'] = sys.path+":/usr/local/bin:/usr/bin:/bin:/app/vendor/firefox:/app/geckodriver"
+my_path = ['/usr/local/bin','/usr/bin','/bin','/app/vendor/firefox','/app/geckodriver']
+os.environ['PATH'] = sys.path+my_path
 print("updated path:",sys.path)
 
 
