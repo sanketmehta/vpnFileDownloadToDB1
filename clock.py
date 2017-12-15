@@ -32,6 +32,7 @@ os.chmod('/app', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 print("changed app folder permissions")
 
 
+
 # st1 = os.stat('/app/geckodriver/geckodriver.exe')
 # os.chmod('/app/geckodriver/geckodriver.exe', st1.st_mode | stat.S_IEXEC)
 # os.chmod('/app/geckodriver/geckodriver.exe', 777)
@@ -48,6 +49,16 @@ os.chmod('/app/geckodriver.log', 777)
 os.chmod('/app/geckodriver.log', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 os.chmod('/app/geckodriver.log', os.stat('/app/geckodriver.log').st_mode | stat.S_IEXEC)
 print("changed geckodriver.log file permissions")
+
+os.chmod('/app/vendor/firefox', 777)
+os.chmod('/app/vendor/firefox', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+os.chmod('/app/vendor/firefox', os.stat('/app/geckodriver.log').st_mode | stat.S_IEXEC)
+print("changed /app/vendor/firefox file permissions")
+
+# os.chmod('/app/vendor/firefox', 777)
+# os.chmod('/app/vendor/firefox', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+# os.chmod('/app/vendor/firefox', os.stat('/app/geckodriver.log').st_mode | stat.S_IEXEC)
+# print("changed /app/vendor/firefox file permissions")
 
 # open('/app/.heroku/python/geckodriver.log', 'r+')
 # print("opened geckodriver.log file in read mode")
