@@ -77,7 +77,7 @@ def timed_job():
     
     
     # Start selenium with the configured binary.
-    driver = webdriver.Firefox(executable_path='/app/geckodriver.exe', firefox_binary=binary, firefox_profile=profile, log_path='/app')
+    driver = webdriver.Firefox(executable_path='/app/geckodriver.exe', firefox_binary=binary, firefox_profile=profile, log_path='/app/geckodriver.log')
 #     driver = webdriver.Firefox(executable_path='/app/geckodriver', firefox_binary=binary, firefox_profile=profile)
 #     driver = webdriver.Firefox(firefox_binary=binary, desired_capabilities=capabilities, firefox_profile=profile)
 #     driver = webdriver.Firefox(firefox_profile=profile)
