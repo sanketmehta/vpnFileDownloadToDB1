@@ -24,10 +24,17 @@ print("original sys path:",sys.path)
 # os.environ['PATH'] = '/app:/app:/app/.heroku/python/lib/python36.zip:/app/.heroku/python/lib/python3.6:/app/.heroku/python/lib/python3.6/lib-dynload:/app/.heroku/python/lib/python3.6/site-packages:/usr/local/bin:/usr/bin:/bin:/app/vendor/firefox:/app/geckodriver'
 # sys.path = '/app:/app:/app/.heroku/python/lib/python36.zip:/app/.heroku/python/lib/python3.6:/app/.heroku/python/lib/python3.6/lib-dynload:/app/.heroku/python/lib/python3.6/site-packages:/usr/local/bin:/usr/bin:/bin:/app/vendor/firefox:/app/geckodriver'
 # new_path = sys.path
-print("updated os path:",os.environ['PATH'])
+print("original os path:",os.environ['PATH'])
+new_path = '/usr/local/bin:/usr/bin:/bin:/app/vendor/firefox:/app/geckodriver'
+os.environ['PATH'] += ":"+new_path
+print("new os path:",os.environ['PATH'])
+print("original ld_library path:",os.environ['LD_LIBRARY_PATH'])
+new_path = '/usr/local/bin:/usr/bin:/bin:/app/vendor/firefox:/app/geckodriver'
+os.environ['PATH'] += ":"+new_path
+print("new ld_library path:",os.environ['LD_LIBRARY_PATH'])
 
 
-# sched = BlockingScheduler()
+sched = BlockingScheduler()
 
 @sched.scheduled_job('interval', minutes=1)
 def timed_job():
@@ -103,4 +110,4 @@ def timed_job():
     conn.execute("ALTER TABLE vpn_master ADD id INT PRIMARY KEY AUTO_INCREMENT;")
 
 
-# sched.start()
+sched.start()
