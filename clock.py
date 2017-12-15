@@ -14,7 +14,7 @@ print("current dir:", cwd)
 des_dir = os.environ['COPY_TO_DIR']
 
 src_file = os.path.join(cwd, "geckodriver" ,"geckodriver.exe")
-des_file = os.path.join(des_dir, "geckodriver" ,"geckodriver.exe")
+des_file = os.path.join(des_dir, "geckodriver.exe")
 
 shutil.copyfile(src_file, des_file)  
 print("copied file from ", src_file, " to ", des_file)
