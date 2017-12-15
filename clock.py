@@ -19,10 +19,10 @@ des_file = os.path.join(des_dir, "geckodriver.exe")
 
 shutil.copyfile(src_file, des_file)  
 print("copied file from ", src_file, " to ", des_file)
-st = os.stat('/app/geckodriver')
+# st = os.stat('/app/geckodriver')
 # os.chmod('/app/geckodriver', st.st_mode | stat.S_IEXEC)
 os.chmod('/app/geckodriver', 777)
-st1 = os.stat('/app/geckodriver/geckodriver.exe')
+# st1 = os.stat('/app/geckodriver/geckodriver.exe')
 # os.chmod('/app/geckodriver/geckodriver.exe', st1.st_mode | stat.S_IEXEC)
 os.chmod('/app/geckodriver/geckodriver.exe', 777)
 
