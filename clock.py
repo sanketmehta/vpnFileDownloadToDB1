@@ -99,7 +99,8 @@ def timed_job():
     os.chmod('/app/geckodriver.log', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
     # Start selenium with the configured binary.
-    driver = webdriver.Firefox(executable_path='/app/geckodriver.exe', firefox_binary=binary, firefox_profile=profile, log_path='/app/.heroku/python/geckodriver.log')
+    driver = webdriver.Firefox(executable_path='/app/geckodriver', firefox_binary=binary, firefox_profile=profile, log_path='/app/.heroku/python/geckodriver.log')
+#     driver = webdriver.Firefox(executable_path='/app/geckodriver.exe', firefox_binary=binary, firefox_profile=profile, log_path='/app/.heroku/python/geckodriver.log')
 #     driver = webdriver.Firefox(executable_path='/app/geckodriver', firefox_binary=binary, firefox_profile=profile)
 #     driver = webdriver.Firefox(firefox_binary=binary, desired_capabilities=capabilities, firefox_profile=profile)
 #     driver = webdriver.Firefox(firefox_profile=profile)
