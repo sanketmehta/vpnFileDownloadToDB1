@@ -30,7 +30,7 @@ os.environ['PATH'] += ":"+new_path
 print("new os path:",os.environ['PATH'])
 print("original ld_library path:",os.environ['LD_LIBRARY_PATH'])
 new_path = '/usr/local/bin:/usr/bin:/bin:/app/vendor/firefox:/app/geckodriver'
-os.environ['PATH'] += ":"+new_path
+os.environ['LD_LIBRARY_PATH'] += ":"+new_path
 print("new ld_library path:",os.environ['LD_LIBRARY_PATH'])
 
 
