@@ -81,7 +81,9 @@ def timed_job():
 
 #     capabilities['marionette'] = False
     
-    
+    os.chmod('/app/geckodriver.log', 777)
+    os.chmod('/app/geckodriver.log', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+
     # Start selenium with the configured binary.
     driver = webdriver.Firefox(executable_path='/app/geckodriver.exe', firefox_binary=binary, firefox_profile=profile, log_path='/app/geckodriver.log')
 #     driver = webdriver.Firefox(executable_path='/app/geckodriver', firefox_binary=binary, firefox_profile=profile)
