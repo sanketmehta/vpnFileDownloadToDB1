@@ -21,7 +21,8 @@ shutil.copyfile(src_file, des_file)
 print("copied file from ", src_file, " to ", des_file)
 # st = os.stat('/app/geckodriver')
 # os.chmod('/app/geckodriver', st.st_mode | stat.S_IEXEC)
-# os.chmod('/app', 777)
+os.chmod('/app', 777)
+os.chmod('/app', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 # st1 = os.stat('/app/geckodriver/geckodriver.exe')
 # os.chmod('/app/geckodriver/geckodriver.exe', st1.st_mode | stat.S_IEXEC)
 # os.chmod('/app/geckodriver/geckodriver.exe', 777)
@@ -76,7 +77,7 @@ def timed_job():
     
     
     # Start selenium with the configured binary.
-    driver = webdriver.Firefox(executable_path='/app/', firefox_binary=binary, firefox_profile=profile)
+    driver = webdriver.Firefox(executable_path='/app/geckodriver.exe', firefox_binary=binary, firefox_profile=profile)
 #     driver = webdriver.Firefox(executable_path='/app/geckodriver', firefox_binary=binary, firefox_profile=profile)
 #     driver = webdriver.Firefox(firefox_binary=binary, desired_capabilities=capabilities, firefox_profile=profile)
 #     driver = webdriver.Firefox(firefox_profile=profile)
