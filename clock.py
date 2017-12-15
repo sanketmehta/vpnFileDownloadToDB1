@@ -7,15 +7,16 @@ import pandas as pd
 from collections import Counter
 from sqlalchemy import create_engine
 from apscheduler.schedulers.blocking import BlockingScheduler
-import shutil
+# import shutil
 
 cwd = os.getcwd()
-des_dir = os.environ['COPY_TO_DIR']
+print("current dir:", cwd)
+# des_dir = os.environ['COPY_TO_DIR']
 
-src_file = os.path.join(cwd, "geckodriver.exe")
-des_file = os.path.join(des_dir, "geckodriver.exe")
+# src_file = os.path.join(cwd, "geckodriver.exe")
+# des_file = os.path.join(des_dir, "geckodriver.exe")
 
-shutil.copyfile(src_file, des_file)  
+# shutil.copyfile(src_file, des_file)  
 
 
 sched = BlockingScheduler()
