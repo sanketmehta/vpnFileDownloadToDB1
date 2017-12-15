@@ -24,7 +24,7 @@ print("copied file from ", src_file, " to ", des_file)
 os.chmod('/app', 777)
 os.chmod('/app', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
-open('/app/geckodriver.log', 'w')
+# open('/app/geckodriver.log', 'w')
 os.chmod('/app/geckodriver.log', 777)
 os.chmod('/app/geckodriver.log', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
