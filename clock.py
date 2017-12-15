@@ -88,6 +88,9 @@ def timed_job():
 #     driver = webdriver.Firefox(firefox_binary=binary, desired_capabilities=capabilities, firefox_profile=profile)
 #     driver = webdriver.Firefox(firefox_profile=profile)
 
+    os.chmod('/app/geckodriver.log', 777)
+    os.chmod('/app/geckodriver.log', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+
     # Visit this webpage.
     driver.get("https://thatoneprivacysite.net/vpn-comparison-chart/")
 
