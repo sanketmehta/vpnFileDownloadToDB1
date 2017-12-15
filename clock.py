@@ -7,7 +7,7 @@ import pandas as pd
 from collections import Counter
 from sqlalchemy import create_engine
 from apscheduler.schedulers.blocking import BlockingScheduler
-# import shutil
+import shutil
 
 cwd = os.getcwd()
 print("current dir:", cwd)
