@@ -23,12 +23,7 @@ print("current dir:", cwd)
 # os.chmod('/app/geckodriver', st.st_mode | stat.S_IEXEC)
 os.chmod('/app', 777)
 os.chmod('/app', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
-
-os.chmod('/app/geckodriver.log', 777)
-os.chmod('/app/geckodriver.log', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
-os.chmod('/app/geckodriver.log', os.stat('/app/geckodriver.log').st_mode | stat.S_IEXEC)
-open('/app/geckodriver.log', 'w')
-close('/app/geckodriver.log')
+print("changed app folder permissions")
 
 
 # st1 = os.stat('/app/geckodriver/geckodriver.exe')
@@ -38,9 +33,18 @@ os.chmod('/app/geckodriver.exe', 777)
 # os.chmod('/app/geckodriver.exe', os.stat('/app/geckodriver.exe').st_mode | stat.S_IEXEC)
 os.chmod('/app/geckodriver.exe', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
-print("changed file permissions")
+print("changed geckodriver.exe file permissions")
+
 # os.chmod('/app/geckodriver', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 # os.chmod('/app/geckodriver/geckodriver.exe', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+
+os.chmod('/app/geckodriver.log', 777)
+os.chmod('/app/geckodriver.log', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+os.chmod('/app/geckodriver.log', os.stat('/app/geckodriver.log').st_mode | stat.S_IEXEC)
+print("changed geckodriver.log file permissions")
+
+open('/app/geckodriver.log', 'w')
+close('/app/geckodriver.log')
 
 # print("original sys path:",sys.path)
 # # my_path = ['/usr/local/bin','/usr/bin','/bin','/app/vendor/firefox','/app/geckodriver']
