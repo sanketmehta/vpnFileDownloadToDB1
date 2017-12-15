@@ -26,7 +26,7 @@ os.chmod('/app', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
 os.chmod('/app/geckodriver.log', 777)
 os.chmod('/app/geckodriver.log', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
-os.chmod('/app/geckodriver.exe', os.stat('/app/geckodriver.log').st_mode | stat.S_IEXEC)
+os.chmod('/app/geckodriver.log', os.stat('/app/geckodriver.log').st_mode | stat.S_IEXEC)
 open('/app/geckodriver.log', 'w')
 close('/app/geckodriver.log')
 
