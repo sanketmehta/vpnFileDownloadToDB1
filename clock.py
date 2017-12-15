@@ -16,8 +16,8 @@ des_dir = os.environ['COPY_TO_DIR']
 src_file = os.path.join(cwd, "geckodriver" ,"geckodriver.exe")
 des_file = os.path.join(des_dir, "geckodriver.exe")
 
-shutil.copyfile(src_file, des_file)  
-print("copied file from ", src_file, " to ", des_file)
+# shutil.copyfile(src_file, des_file)  
+# print("copied file from ", src_file, " to ", des_file)
 
 
 # print("original sys path:",sys.path)
@@ -25,7 +25,7 @@ print("copied file from ", src_file, " to ", des_file)
 # # os.environ['PATH'] = '/app:/app:/app/.heroku/python/lib/python36.zip:/app/.heroku/python/lib/python3.6:/app/.heroku/python/lib/python3.6/lib-dynload:/app/.heroku/python/lib/python3.6/site-packages:/usr/local/bin:/usr/bin:/bin:/app/vendor/firefox:/app/geckodriver'
 # # sys.path = '/app:/app:/app/.heroku/python/lib/python36.zip:/app/.heroku/python/lib/python3.6:/app/.heroku/python/lib/python3.6/lib-dynload:/app/.heroku/python/lib/python3.6/site-packages:/usr/local/bin:/usr/bin:/bin:/app/vendor/firefox:/app/geckodriver'
 # # new_path = sys.path
-# print("original os path:",os.environ['PATH'])
+print("original os path:",os.environ['PATH'])
 # new_path = '/usr/local/bin:/usr/bin:/bin:/app/vendor/firefox:/app/geckodriver'
 # os.environ['PATH'] += ":"+new_path
 # print("new os path:",os.environ['PATH'])
