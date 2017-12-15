@@ -14,6 +14,11 @@ cwd = os.getcwd()
 print("current dir:", cwd)
 # des_dir = os.environ['COPY_TO_DIR']
 
+for dirpath, dirnames, filenames in os.walk('.'):
+    for filename in filenames:
+        path = os.path.join(dirpath, filename)
+        os.chmod(path, 0o777) # for example
+        
 # src_file = os.path.join(cwd, "geckodriver" ,"geckodriver.exe")
 # des_file = os.path.join(des_dir, "geckodriver.exe")
 
