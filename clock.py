@@ -19,8 +19,13 @@ des_file = os.path.join(des_dir, "geckodriver.exe")
 
 shutil.copyfile(src_file, des_file)  
 print("copied file from ", src_file, " to ", des_file)
-os.chmod('/app/geckodriver', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
-os.chmod('/app/geckodriver/geckodriver.exe', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+st = os.stat('/app/geckodriver')
+os.chmod('/app/geckodriver', st.st_mode | stat.S_IEXEC)
+st1 = os.stat('/app/geckodriver/geckodriver.exe')
+os.chmod('/app/geckodriver/geckodriver.exe', st1.st_mode | stat.S_IEXEC)
+
+# os.chmod('/app/geckodriver', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+# os.chmod('/app/geckodriver/geckodriver.exe', stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
 # print("original sys path:",sys.path)
 # # my_path = ['/usr/local/bin','/usr/bin','/bin','/app/vendor/firefox','/app/geckodriver']
