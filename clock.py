@@ -19,6 +19,11 @@ print("current dir:", cwd)
 # shutil.copyfile(src_file, des_file)  
 
 
+print("original path:",sys.path)
+os.environ['PATH'] = sys.path+":/usr/local/bin:/usr/bin:/bin:/app/vendor/firefox:/app/geckodriver"
+print("updated path:",sys.path)
+
+
 sched = BlockingScheduler()
 
 @sched.scheduled_job('interval', minutes=1)
@@ -44,7 +49,6 @@ def timed_job():
     profile.set_preference("browser.download.dir", dir_path)
     profile.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/xml,text/plain,text/xml,image/jpeg,text/csv")
 
-    print(sys.path)
 #     capabilities['marionette'] = False
     
     
