@@ -9,6 +9,7 @@ from sqlalchemy import create_engine
 from apscheduler.schedulers.blocking import BlockingScheduler
 import shutil
 import stat
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 cwd = os.getcwd()
 print("current dir:", cwd)
@@ -93,6 +94,7 @@ def timed_job():
     profile.set_preference("browser.download.dir", dir_path)
     profile.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/xml,text/plain,text/xml,image/jpeg,text/csv")
 
+    capabilities = DesiredCapabilities.FIREFOX.copy()
     capabilities['marionette'] = False
     
     os.chmod('/app/geckodriver.log', 777)
